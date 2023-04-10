@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Money Manager</h1>
+    <header class="header" id="header">
+        <nav class="navbar" id="navbar">
+            <a href="#">Records</a>
+            <a href="#">Analysis</a>
+            <a href="#">Budgets</a>
+            <a href="#">Accounts</a>
+            <a href="#">Categories</a>
+        </nav>
+    </header>
+    <div class="details" id="details">
+        <div class="expense" id="expense">
+            <h3 class="income">Income</h3> <h3>|</h3>
+            <h3 class="income">Expense</h3>
+        </div>
+        <div class="inputs">
+            <ul class="dropdown" id="dropdown" onclick="drop()"><h3 id="Drop-head">Categories</h3>
+                <div class="dropcontent" id="dropcontent">
+                    <li class="options" onclick="changecategory(1)">Grocery</li>
+                    <li class="options" onclick="changecategory(2)">Medical</li>
+                    <li class="options" onclick="changecategory(3)">Stationary</li>
+                    <li class="options" onclick="changecategory(4)">Petrol</li>
+                    <li class="options" onclick="changecategory(5)">Rent</li>
+                    <li class="options" onclick="changecategory(6)">Miscelleneous</li>
+                </div>
+
+            </ul>
+        </div>
+        <div class="amt">
+            <input type="number">
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

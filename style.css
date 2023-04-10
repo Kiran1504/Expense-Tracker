@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: rgb(135, 250, 250);
+}
+h1{
+    margin: 0 4px;
+    font-size: 2.2rem;
+    padding: 10px;
+    text-align: center;
+    font:bolder ;
+    font-family: sans-serif;
+    background-color: rgba(103, 81, 81, 0.707);
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4px;
+    padding: 8px;
+    background-color: rgb(15, 31, 60);
+    color: white;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+.details{
+    width: 700px;
+    margin: 15px auto;
+    align-content: center;
+    /* border-bottom: 2px solid;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px; */
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+}
+.expense{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin: 5px 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+.inputs{
+    margin: 15px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+#category{
+    text-decoration: none;
+    /* margin-bottom:; */
+}
+
+.dropcontent{
+    display: none;
+    padding: 5px;
+}
+
+.dropcontent li{
+    list-style:  none;
+    padding: 5px;
+}
+.show{
+    display: flex;
+    flex-direction: column;
+}
+
+.amt{
+    margin-top: 25px;
+}
+.amt input{
+    width: 400px;
+    height: 35px;
+    list-style: none;
+    font-size: 25px;
+}
