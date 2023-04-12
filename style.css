@@ -88,3 +88,12 @@ h1{
     list-style: none;
     font-size: 25px;
 }
+.save{
+    width: 200px;
+    margin-top: 25px;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #0cfc5c;
+    color: rgb(0, 0, 0);
+}
