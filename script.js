@@ -3,37 +3,14 @@ var selected = document.getElementsByClassName('options')
 function drop(){
     document.getElementById('dropcontent').classList.toggle("show")
 }
+
 function changecategory(v){
-    
-    switch (v) {
-        case 1:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        case 2:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        case 3:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        case 4:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        case 5:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        case 6:
-            category = "Categories : " + selected[v-1].innerHTML
-            document.getElementById('Drop-head').innerHTML =  category;
-            break;
-        
-        default:
-            break;
-    }
+    let category = document.getElementById('Drop-head').innerText
+    selected = document.getElementsByClassName('options')
+    category = "Categories : " + selected[v-1].innerHTML
+    document.getElementById('Drop-head').innerHTML =  cli;
+    var title = selected[v-1].innerHTML
+    console.log(title);
 }
 
 function save(){
