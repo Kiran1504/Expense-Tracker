@@ -8,7 +8,7 @@ function changecategory(v){
     let category = document.getElementById('Drop-head').innerText
     selected = document.getElementsByClassName('options')
     category = "Categories : " + selected[v-1].innerHTML
-    document.getElementById('Drop-head').innerHTML =  cli;
+    document.getElementById('Drop-head').innerHTML =  category;
     var title = selected[v-1].innerHTML
     console.log(title);
 }
