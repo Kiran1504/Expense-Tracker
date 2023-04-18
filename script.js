@@ -31,4 +31,10 @@ function save(){
     }
 
 
+    let tablebody = document.getElementById("table-body");
+    let str = '';
+    itemJsonArray.forEach((element , i) => {
+        str += '<tr><td> -- </td><td>'+  element[0] + ' </td><td>' + element[1] + ' </td></tr>';
+    });
+    tablebody.innerHTML = str;
 }
