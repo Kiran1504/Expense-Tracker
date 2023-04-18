@@ -101,3 +101,23 @@ h1{
     background-color: #0cfc5c;
     color: rgb(0, 0, 0);
 }
+#container{
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+th{
+    background-color: #fca00c;
+    color: white;
+}
+#container table , th , td{
+    margin: auto;
+    table-layout: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table{
+    width: 50%;
+}
