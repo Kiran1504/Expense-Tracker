@@ -15,6 +15,9 @@ h1{
     font-family: sans-serif;
     background-color: rgba(103, 81, 81, 0.707);
 }
+h3{
+    font-size: larger;
+}
 .navbar{
     display: flex;
     justify-content: space-evenly;
@@ -86,13 +89,14 @@ h1{
     align-items: center;
     padding: 5px;
 }
+
 .amt input{
     width: 400px;
     height: 35px;
-    list-style: none;
     font-size: 25px;
 }
-.save{
+
+.save, .clear{
     width: 200px;
     margin-top: 25px;
     text-decoration: none;
@@ -100,24 +104,47 @@ h1{
     padding: 5px;
     background-color: #0cfc5c;
     color: rgb(0, 0, 0);
+    border-radius: 8px;
 }
-#container{
-    margin: auto;
+.clear{
+    width: 100px;
+    border-radius: 10px;
+}
+#storage-table{
+    margin: 15px auto;
     padding: 5px;
     text-align: center;
     align-items: center;
 }
-
+table{
+    width: 75%;
+}
 th{
     background-color: #fca00c;
     color: white;
+    height: 30px;
 }
-#container table , th , td{
+#storage-table table , th , td{
     margin: auto;
     table-layout: auto;
     border: 2px solid black;
     border-collapse: collapse;
 }
-table{
-    width: 50%;
+.recordtable{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.delete-button{
+    width: 50px;
+    margin: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #0cfc5c;
+    color: rgb(0, 0, 0);
 }
