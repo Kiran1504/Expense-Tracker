@@ -131,6 +131,9 @@ th{
     color: white;
     height: 30px;
 }
+th , td{
+    width: 250px;
+}
 #storage-table table , th , td{
     margin: auto;
     table-layout: auto;
