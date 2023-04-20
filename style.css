@@ -73,6 +73,13 @@ h3{
     padding: 5px;
 }
 
+.dropcontent:hover{
+    cursor: pointer;
+}
+
+.dropdown:hover{
+    cursor: pointer;
+}
 .dropcontent li{
     list-style:  none;
     padding: 5px;
