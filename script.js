@@ -58,7 +58,7 @@ function deleting(i){
     // console.log(i);
     itemstr=localStorage.getItem("itemsJson");
     itemJsonArray = JSON.parse(itemstr);
-    itemJsonArray.splice(i)
+    itemJsonArray.splice(i,1)
     localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray));
     save();
 }
