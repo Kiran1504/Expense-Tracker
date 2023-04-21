@@ -83,6 +83,7 @@ function deleting(i){
     localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray));
     save();
 }
+save();
 const userdata = [
     {
         Grocery :{},
