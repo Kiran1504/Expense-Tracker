@@ -6,14 +6,9 @@ var selected = document.getElementsByClassName('options')
 
 
 
-function income_mode(){
-    document.getElementById('income-toggle').style.color='blue';
-    document.getElementById('Drop-head').style.display='none';
-    document.getElementById('dropcontent').style.display='none';
-    document.getElementById('expense-toggle').style.color='black';
 
-}
 
+<<<<<<< HEAD
 function expense_mode(){
     document.getElementById('income-toggle').style.color='black';
     document.getElementById('Drop-head').style.display='block';
@@ -24,6 +19,8 @@ function expense_mode(){
 function drop(){
     document.getElementById('dropcontent').classList.toggle("show")
 }
+=======
+>>>>>>> 44264ce293d75a48a769d0803c3a40a519c5c8b2
 
 
 
