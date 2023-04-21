@@ -1,8 +1,10 @@
 var category = document.getElementById('dropdown').innerText
 var selected = document.getElementsByClassName('options')
-function drop(){
-    document.getElementById('dropcontent').classList.toggle("show")
-}
+
+
+
+
+
 
 function income_mode(){
     document.getElementById('income-toggle').style.color='blue';
@@ -15,9 +17,12 @@ function income_mode(){
 function expense_mode(){
     document.getElementById('income-toggle').style.color='black';
     document.getElementById('Drop-head').style.display='block';
-    document.getElementById('dropcontent').style.display='block';
+    
     document.getElementById('expense-toggle').style.color='blue';
 
+}
+function drop(){
+    document.getElementById('dropcontent').classList.toggle("show")
 }
 
 
@@ -26,6 +31,15 @@ function expense_mode(){
 
 
 
+function toggle_hide_show() {
+    var x = document.getElementById("dropcontent");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
 
 function changecategory(v){
     let category = document.getElementById('Drop-head').innerText
@@ -33,6 +47,7 @@ function changecategory(v){
     category = "Categories : " + selected[v-1].innerHTML
     document.getElementById('Drop-head').innerHTML =  category;
     var title = selected[v-1].innerHTML
+    toggle_hide_show();
     console.log(title);
 }
 

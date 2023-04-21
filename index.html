@@ -31,7 +31,8 @@
 
 
         <div class="inputs">
-            <ul class="dropdown" id="dropdown" onclick="drop()"><h3 id="Drop-head">Categories</h3>
+            <div id="Categories_main"
+            <ul class="dropdown" id="dropdown" onclick="drop()"><h3 id="Drop-head" onclick="toggle_hide_show()">Categories</h3>
                 <div class="dropcontent" id="dropcontent">
                     <li class="options" onclick="changecategory(1)">Grocery</li>
                     <li class="options" onclick="changecategory(2)">Medical</li>
@@ -40,8 +41,10 @@
                     <li class="options" onclick="changecategory(5)">Rent</li>
                     <li class="options" onclick="changecategory(6)">Miscelleneous</li>
                 </div>
+                
 
             </ul>
+            </div>
         </div>
         <div class="amt">
             <input type="number" id="amount">
