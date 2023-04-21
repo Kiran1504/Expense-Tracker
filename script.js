@@ -4,6 +4,27 @@ function drop(){
     document.getElementById('dropcontent').classList.toggle("show")
 }
 
+function income_mode(){
+    document.getElementById('income-toggle').style.color='blue';
+    document.getElementById('Drop-head').style.display='none';
+    document.getElementById('expense-toggle').style.color='black';
+
+}
+
+function expense_mode(){
+    document.getElementById('income-toggle').style.color='black';
+    document.getElementById('Drop-head').style.display='block';
+    document.getElementById('expense-toggle').style.color='blue';
+
+}
+
+
+
+
+
+
+
+
 function changecategory(v){
     let category = document.getElementById('Drop-head').innerText
     selected = document.getElementsByClassName('options')

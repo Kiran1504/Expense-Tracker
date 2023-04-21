@@ -46,7 +46,7 @@ h3{
     border-radius: 20px;
     padding: 10px;
 }
-.expense{
+.income-expense{
     display: flex;
     justify-content: space-around;
     align-items: center;
