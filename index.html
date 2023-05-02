@@ -8,25 +8,28 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
       <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Money Manager</h1>
     <header class="header" id="header">
         <nav class="navbar" id="navbar">
-            <a href="#records">Records</a>
-            <a href="analysis.html">Analysis</a>
+            <a href="#">Records</a>
+            <a href="#">Analysis</a>
             <a href="#">Budgets</a>
             <a href="#">Accounts</a>
             <a href="#">Categories</a>
             <a href="#">Login | Signup</a>
         </nav>
     </header>
-
+<div class="flex-column" id="flex-column">
     <div class="details" id="details">
 
         <div class="income-expense" id="income-expense">
             <h3 class="income" id="income-toggle" onclick="income_mode()">Income</h3> <h3>|</h3>
-            <h3 class="income" id="expense-toggle" onclick="expense_mode()">Expense</h3>
+            <h3 class="income highlighted" id="expense-toggle" onclick="expense_mode()">Expense</h3>
         </div>
 
 
@@ -44,8 +47,9 @@
             </ul>
         </div>
         <div class="amt">
+            <h3>Enter the amount</h3>
             <input type="number" id="amount">
-            <button type="submit" class="save" id="save" onclick="getandupdate()"> Save </button>
+            <button type="submit" class="save" id="save" onclick="checkin_or_out()"> Save </button>
         </div>
     </div>
     <div id="storage-table">
@@ -64,6 +68,13 @@
             </tbody>
         </table></div>
         <button type="reset" class="clear" onclick="clearing()">Clear</button>
+    </div>
+    </div>
+    <div class="accbalance" id="accbalance">
+        <h3>5000</h3>
+    </div>
+    <div class="finalbalance" id="finalbalance">
+        <h3>5000</h3>
     </div>
 
     <script src="script.js"></script>
