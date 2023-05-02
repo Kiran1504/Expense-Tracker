@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
 
-<h1>My Web Page</h1>
+<h1>Money Manager</h1>
+    <h3>Analysis</h3>
 
 <div id="piechart" style="width: 1960px; height: 500px;"></div>
 
@@ -58,7 +62,7 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'My Average Day', is3D: true,};
+  var options = {'title':"Your Spending's Distribution", is3D: true,};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
