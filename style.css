@@ -70,6 +70,14 @@ h3{
     padding-top: 5px;
     padding-bottom: 15px;
 }
+
+#income-toggle, #expense-toggle, #dropdown, #save, #clear{
+    cursor: pointer;
+}
+
+#amt_title{
+    cursor: default;
+}
 .inputs{
     margin: 15px;
     display: flex;
