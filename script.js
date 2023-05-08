@@ -50,16 +50,18 @@ function changecategory(v){
 function getexpense(){
     var amt = document.getElementById("amount").value;
     category = document.getElementById('dropdown').innerText
+    const date = new Date()
+    let dot = date.getDate()+ "/" +date.getMonth() + "/" +date.getFullYear()
     if(localStorage.getItem("itemsJson")==null)
     {
         itemJsonArray=[]
-        itemJsonArray.push([category.slice(13,),amt])
+        itemJsonArray.push([dot,category.slice(13,),amt])
         localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
     }
     else{
         itemstr=localStorage.getItem("itemsJson")
         itemJsonArray = JSON.parse(itemstr)
-        itemJsonArray.push([category.slice(13,),amt])
+        itemJsonArray.push([dot,category.slice(13,),amt])
         localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
     }
     save();
@@ -67,26 +69,27 @@ function getexpense(){
 function getincome(){
     var amt = document.getElementById("amount").value;
     category = 'Income Credited';
-
+    const date = new Date()
+    let dot = date.getDate()+ "/" +date.getMonth() + "/" +date.getFullYear()
     if(localStorage.getItem("itemsJson")==null)
     {
         itemJsonArray=[]
-        itemJsonArray.push([category,amt])
+        itemJsonArray.push([dot,category,amt])
         localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
     }
     else{
         itemstr=localStorage.getItem("itemsJson")
         itemJsonArray = JSON.parse(itemstr)
-        itemJsonArray.push([category,amt])
+        itemJsonArray.push([dot,category,amt])
         localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
     }
     var arrlen = itemJsonArray.length
-    window.accBalance += Number(itemJsonArray[arrlen-1][1])
+    window.accBalance += Number(itemJsonArray[arrlen-1][2])
     save();
 }
 
 function save(use=true){
-    const date = new Date()
+    
     if(localStorage.getItem("itemsJson")==null)
     {
         itemJsonArray=[]
@@ -98,21 +101,19 @@ function save(use=true){
     var data = localStorage.getItem('itemsJson')
     let tablebody = document.getElementById("table-body");
     let str = '';
-    console.log(date.getMonth());
+    // console.log(date.getMonth());
     itemJsonArray.forEach((element , i) => {
-        str += '<tr><td>'+date.getDate() + "/" +date.getMonth() + "/" +date.getFullYear() +' </td><td>'+  element[0] + ' </td><td>' + element[1] + ' </td><td><button class="delete-button" onclick="deleting('+i+')">Delete</button></td></tr>';
+        str += '<tr><td>'+element[0]+' </td><td>'+  element[1] + ' </td><td>' + element[2] + ' </td><td><button class="delete-button" onclick="deleting('+i+')">Delete</button></td></tr>';
     });
     tablebody.innerHTML = str;
 
     let finalbalance=document.getElementById("finalbalance").innerText;
     finalbalance=Number(finalbalance)
-    console.log(itemJsonArray)
-    console.log(use)
-    updateFinalBalance(finalbalance,use)
+    updateFinalBalance(itemJsonArray,finalbalance,use)
     
 }
 
-function updateFinalBalance(finalbalance,use){
+function updateFinalBalance(itemJsonArray,finalbalance,use){
     if (use) {
         // let expense=itemJsonArray[itemJsonArray.length-1][1]
         // expense=Number(expense)
@@ -123,16 +124,15 @@ function updateFinalBalance(finalbalance,use){
         itemJsonArray.forEach((element) => {
            
             
-            if (element[0]=="Income Credited"){
-                income+=Number(element[1])
+            if (element[1]=="Income Credited"){
+                income+=Number(element[2])
                 finalbalance=accbalance+income-expense
             }
             else {
-                expense+=Number(element[1])
+                expense+=Number(element[2])
                 finalbalance=accbalance-expense+income
             }
         })
-
         //finalbalance=finalbalance-expense;
     }
     else{
@@ -140,28 +140,35 @@ function updateFinalBalance(finalbalance,use){
         finalbalance =Number(finalbalance)
         let accbalance=document.getElementById("accbalance").innerText;
         accbalance=Number(accbalance)
-        if (localStorage != undefined){
+        if (itemJsonArray.length > 0){
             let expense=0
             let income=0
             itemJsonArray.forEach((element) => {
             
                 
-                if (element[0]=="Income Credited"){
-                    income+=Number(element[1])
+                if (element[1]=="Income Credited"){
+                    income+=Number(element[2])
                     finalbalance=accbalance+income-expense
                 }
                 else {
-                    expense+=Number(element[1])
+                    expense+=Number(element[2])
                     finalbalance=accbalance-expense+income
                     }
                 })
+                console.log("IF is running");
+                console.log(itemJsonArray.length);
         }
 
         else{
-            clearing()
+            let accbalance=document.getElementById("accbalance").innerText;
+            
+            finalbalance = accbalance
+            console.log(finalbalance);
+            console.log("ELSE is running");
+            document.getElementById("finalbalance").innerHTML="<h3>"+accbalance+"</h3>";
         }
     }
-    document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";
+    document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";  
 }
 
 
@@ -169,7 +176,7 @@ function updateFinalBalance(finalbalance,use){
 function clearing(){
     if (confirm("You are claring all data???")){
         localStorage.clear();
-        window.accBalance = 0
+        // window.accBalance = 0
         save(false)
         let accbalance=document.getElementById("accbalance").innerText;
         document.getElementById("finalbalance").innerHTML="<h3>"+accbalance+"</h3>";
@@ -207,13 +214,3 @@ function deleting(i){
     // document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";
 }
 save();
-const userdata = [
-    {
-        Grocery :{},
-        Medical:{},
-        Stationary:{}, 
-        Petrol:{}, 
-        Rent:{}, 
-        Miscelleneous:{}
-    }
-]
