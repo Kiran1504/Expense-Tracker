@@ -102,9 +102,20 @@ function save(use=true){
     let tablebody = document.getElementById("table-body");
     let str = '';
     // console.log(date.getMonth());
-    itemJsonArray.forEach((element , i) => {
-        str += '<tr><td>'+element[0]+' </td><td>'+  element[1] + ' </td><td>' + element[2] + ' </td><td><button class="delete-button" onclick="deleting('+i+')">Delete</button></td></tr>';
-    });
+    // itemJsonArray.forEach((element , i) => {
+    //     str += '<tr><td>'+element[0]+' </td><td>'+  element[1] + ' </td><td>' + element[2] + ' </td><td><button class="delete-button" onclick="deleting('+i+')">Delete</button></td></tr>';
+    // });
+
+    for (ferrari=0;ferrari<itemJsonArray.length;ferrari++){
+        let inORout="showred"
+        if (itemJsonArray[ferrari][1]=='Income Credited'){inORout="showgreen"}
+        console.log(itemJsonArray[ferrari],inORout)
+        
+        
+        str += '<tr><td class="'+inORout+'">'+itemJsonArray[ferrari][0]+' </td><td class="'+inORout+'">'+  itemJsonArray[ferrari][1] + ' </td><td class="'+inORout+'">' + itemJsonArray[ferrari][2] + ' </td><td><button class="delete-button" onclick="deleting('+ferrari+')">Delete</button></td></tr>';
+    }
+
+
     tablebody.innerHTML = str;
 
     let finalbalance=document.getElementById("finalbalance").innerText;
