@@ -112,7 +112,7 @@ function save(use=true){
         console.log(itemJsonArray[ferrari],inORout)
         
         
-        str += '<tr><td>'+itemJsonArray[ferrari][0]+' </td><td>'+  itemJsonArray[ferrari][1] + ' </td><td class="'+inORout+'">' + itemJsonArray[ferrari][2] + ' </td><td><button class="delete-button" onclick="deleting('+ferrari+')">Delete</button></td></tr>';
+        str += '<tr><td class="'+inORout+'">'+itemJsonArray[ferrari][0]+' </td><td class="'+inORout+'">'+  itemJsonArray[ferrari][1] + ' </td><td class="'+inORout+'">' + itemJsonArray[ferrari][2] + ' </td><td><button class="delete-button" onclick="deleting('+ferrari+')">Delete</button></td></tr>';
     }
 
 
