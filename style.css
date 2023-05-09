@@ -188,7 +188,7 @@ th , td{
 .grid {
     display: flex;
     flex-wrap: wrap;
-    cursor:default;
+    cursor:none;
     margin:0px;
     
     overflow : hidden;
@@ -196,7 +196,7 @@ th , td{
     background-color: #270d3b;
     width: 100%;
     height: 100px;
-    cursor: url(Media/flash.png), default;
+    /* cursor: url(Media/flash.png), default; */
 
     
     /* z-index: 5; */
