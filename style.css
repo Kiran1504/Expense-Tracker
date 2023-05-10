@@ -9,16 +9,16 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-/* h1{
+h1{
     margin: 0 4px;
     font-size: 2.2rem;
     padding: 10px;
     text-align: center;
     font:bolder ;
-    /* font-family: sans-serif; */
-    /* background-color: rgb(119, 10, 158);
+    font-family: sans-serif; 
+    background-color: rgb(119, 10, 158);
     border-bottom: 1.5px solid #ccc;
-} */ 
+}
 h3{
     font-size: larger;
 }
@@ -126,7 +126,7 @@ h3{
 }
 
 .showred{
-    color: red;
+    color: rgb(193, 45, 19);
 }
 
 .showgreen{
