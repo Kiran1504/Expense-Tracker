@@ -36,26 +36,26 @@ function drawChart() {
     itemstr=localStorage.getItem("itemsJson")
     itemJsonArray = JSON.parse(itemstr)
     itemJsonArray.forEach((element,i) =>{
-        if (element[0]=="Grocery"){
-            groceryE+=Number(element[1])
+        if (element[1]=="Grocery"){
+            groceryE+=Number(element[2])
         }
-        if (element[0]=="Rent"){
-            rentE=rentE+Number(element[1])
+        if (element[1]=="Rent"){
+            rentE=rentE+Number(element[2])
         }
-        if (element[0]=="Stationary"){
-            stationaryE=stationaryE+Number(element[1])
-        }
-        
-        if (element[0]=="Petrol"){
-            petrolE=petrolE+Number(element[1])
+        if (element[1]=="Stationary"){
+            stationaryE=stationaryE+Number(element[2])
         }
         
-        if (element[0]=="Miscelleneous"){
-            miscellaneousE=miscellaneousE+Number(element[1])
+        if (element[1]=="Petrol"){
+            petrolE=petrolE+Number(element[2])
         }
         
-        if (element[0]=="Medical"){
-            medicalE=medicalE+Number(element[1])
+        if (element[1]=="Miscelleneous"){
+            miscellaneousE=miscellaneousE+Number(element[2])
+        }
+        
+        if (element[1]=="Medical"){
+            medicalE=medicalE+Number(element[2])
         }
     })
 
