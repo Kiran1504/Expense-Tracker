@@ -225,3 +225,11 @@ function deleting(i){
     // document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";
 }
 save();
+function createtr(){
+    for(i=0;i<1100;i++){
+    var pixel=document.createElement('div')
+    pixel.classList.add('grid_item')
+    document.getElementById('gridtr').appendChild(pixel)    
+    }
+}
+createtr();
