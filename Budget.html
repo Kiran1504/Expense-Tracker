@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +10,6 @@
     <div class="grid" id="gridtr">
         <h1 id="main-title">Money Manager</h1>  
     </div>
-    <!-- <header class="header" id="header"> -->
         <nav class="navbar" id="navbar">
             <a href="index.html">Records</a>
             <a href="analysis.html">Analysis</a>
@@ -29,7 +27,7 @@
     <button onclick="setstationaryBudget()">Set Stationary budget</button>
     <button onclick="Budgetset()">Save</button>
 
-    <script type="text/javascript">
+    <script>
         Budget=[{"GroceryB":0,
             "MedicalB":0,
             "RentB":0,
@@ -40,7 +38,6 @@
     let groceryB=0;
     function setgroceryBudget(){ 
         window.Budget[0]["GroceryB"]=prompt("set budget",0);
-        //console.log(window.groceryB)
     }
     let medicalB=0;
     function setmedicalBudget(){
