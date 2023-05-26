@@ -9,7 +9,7 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-h1{
+/* h1{
     margin: 0 4px;
     font-size: 2.2rem;
     padding: 10px;
@@ -18,7 +18,7 @@ h1{
     font-family: sans-serif; 
     background-color: rgb(119, 10, 158);
     border-bottom: 1.5px solid #ccc;
-}
+} */
 h3{
     font-size: larger;
 }

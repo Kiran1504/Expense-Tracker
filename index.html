@@ -20,11 +20,11 @@
         </div>
         
         <nav class="navbar" id="navbar">
-            <a href="#">Records</a>
+            <a href="/records">Records</a>
             <a href="analysis.html">Analysis</a>
             <a href="#">Budgets</a>
             <a href="#">Accounts</a>
-            <a href="#">Categories</a>
+            <a href="/categories">Categories</a>
             <a href="#">Login | Signup</a>
         </nav>
     </header>
@@ -52,8 +52,11 @@
         </div>
         <div class="amt">
             <h3 id="amt_title">Enter the amount</h3>
-            <input type="number" id="amount">
+            <!-- <form action="/" method="post"> -->
+                <input type="text" id="cat" name="category" style="display: none;">
+                <input type="number" id="amount" name="amount">
             <button type="submit" class="save" id="save" onclick="checkin_or_out()"> Save </button>
+        <!-- </form> -->
         </div>
     </div>
     <div id="storage-table">
