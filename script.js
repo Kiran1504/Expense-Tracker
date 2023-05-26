@@ -101,11 +101,7 @@ function save(use=true){
     var data = localStorage.getItem('itemsJson')
     let tablebody = document.getElementById("table-body");
     let str = '';
-    // console.log(date.getMonth());
-    // itemJsonArray.forEach((element , i) => {
-    //     str += '<tr><td>'+element[0]+' </td><td>'+  element[1] + ' </td><td>' + element[2] + ' </td><td><button class="delete-button" onclick="deleting('+i+')">Delete</button></td></tr>';
-    // });
-
+    
     for (ferrari=0;ferrari<itemJsonArray.length;ferrari++){
         let inORout="showred"
         if (itemJsonArray[ferrari][1]=='Income Credited'){inORout="showgreen"}
@@ -117,17 +113,16 @@ function save(use=true){
 
 
     tablebody.innerHTML = str;
+    CheckLimit()
 
     let finalbalance=document.getElementById("finalbalance").innerText;
     finalbalance=Number(finalbalance)
-    updateFinalBalance(itemJsonArray,finalbalance,use)
-    
+    updateFinalBalance(itemJsonArray,finalbalance,use)  
 }
 
 function updateFinalBalance(itemJsonArray,finalbalance,use){
     if (use) {
-        // let expense=itemJsonArray[itemJsonArray.length-1][1]
-        // expense=Number(expense)
+        
         let accbalance=document.getElementById("accbalance").innerText;
         accbalance=Number(accbalance)
         let expense=0
@@ -144,7 +139,6 @@ function updateFinalBalance(itemJsonArray,finalbalance,use){
                 finalbalance=accbalance-expense+income
             }
         })
-        //finalbalance=finalbalance-expense;
     }
     else{
         finalbalance=document.getElementById("finalbalance").innerText
@@ -187,7 +181,6 @@ function updateFinalBalance(itemJsonArray,finalbalance,use){
 function clearing(){
     if (confirm("You are claring all data???")){
         localStorage.clear();
-        // window.accBalance = 0
         save(false)
         let accbalance=document.getElementById("accbalance").innerText;
         document.getElementById("finalbalance").innerHTML="<h3>"+accbalance+"</h3>";
@@ -200,29 +193,6 @@ function deleting(i){
     localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray));
     save(false);
 
-    // let accbalance=document.getElementById("accbalance").innerText;
-    // accbalance=Number(accbalance)
-    // let finalbalance=document.getElementById("finalbalance").innerText;
-    // finalbalance=Number(finalbalance)
-    // let expense=0;
-    // if(localStorage.getItem("itemsJson")!=null){
-    //     // itemJsonArray.forEach((element) =>{
-    //     //     str=element[1]
-    //     //     str=Number(str)
-    //     //     expense=expense+str
-    //     // })
-        
-    //     // finalbalance=accbalance-expense
-    //     updateFinalBalance()
-    // }
-    // else {
-        
-    //     finalbalance=accbalance
-    //     document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";
-    // }
-
-
-    // document.getElementById("finalbalance").innerHTML="<h3>"+finalbalance+"</h3>";
 }
 save();
 function createtr(){
@@ -233,3 +203,28 @@ function createtr(){
     }
 }
 createtr();
+
+function CheckLimit(){
+    analysisE=JSON.parse(localStorage.getItem("Analysis"));
+    Budget=JSON.parse(localStorage.getItem("Budget"));
+    
+    if (Number(analysisE[0]["GroceryE"])>=Number(Budget[0]["GroceryB"]) && Number(Budget[0]["GroceryB"])!=0){
+        alert("You have exceeded your spending limit on grocery");
+    }
+    if (Number(analysisE[0]["RentE"])>=Number(Budget[0]["RentB"]) && Number(Budget[0]["RentB"])!=0){
+        alert("You have exceeded your spending limit on rent");
+    }
+    if (Number(analysisE[0]["StationaryE"])>=Number(Budget[0]["StationaryB"]) && Number(Budget[0]["StationaryB"])!=0){
+        alert("You have exceeded your spending limit on stationary");
+    }
+    if (Number(analysisE[0]["PetrolE"])>=Number(Budget[0]["PetrolB"]) && Number(Budget[0]["PetrolB"])!=0){
+        alert("You have exceeded your spending limit on petrol");
+    }
+    if (Number(analysisE[0]["MiscellaneousE"])>=Number(Budget[0]["MiscellaneousB"]) && Number(Budget[0]["MiscellaneousB"])!=0){
+        alert("You have exceeded your spending limit on miscellaneous");
+    }
+    if (Number(analysisE[0]["MedicalE"])>=Number(Budget[0]["MedicalB"]) && Number(Budget[0]["MedicalB"])!=0){
+        alert("You have exceeded your spending limit on medical");
+    }
+    
+}

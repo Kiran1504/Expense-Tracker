@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid" id="gridtr">
+        <h1 id="main-title">Money Manager</h1>  
+    </div>
+    <!-- <header class="header" id="header"> -->
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Records</a>
+            <a href="analysis.html">Analysis</a>
+            <a href="Budget.html">Budgets</a>
+            <a href="#">Accounts</a>
+            <a href="#">Categories</a>
+            <a href="#">Login | Signup</a>
+        </nav>
+
+    <button onclick="setgroceryBudget()">Set Grocery budget</button>
+    <button onclick="setmedicalBudget()">Set Medical budget</button>
+    <button onclick="setrentBudget()">Set Rent budget</button>
+    <button onclick="setpetrolBudget()">Set Petrol budget</button>
+    <button onclick="setmiscellaneousBudget()">Set Miscellaneous budget</button>
+    <button onclick="setstationaryBudget()">Set Stationary budget</button>
+    <button onclick="Budgetset()">Save</button>
+
+    <script type="text/javascript">
+        Budget=[{"GroceryB":0,
+            "MedicalB":0,
+            "RentB":0,
+            "PetrolB":0,
+            "StationaryB":0,
+            "MiscellaneousB":0}]
+
+    let groceryB=0;
+    function setgroceryBudget(){ 
+        window.Budget[0]["GroceryB"]=prompt("set budget",0);
+        //console.log(window.groceryB)
+    }
+    let medicalB=0;
+    function setmedicalBudget(){
+        window.Budget[0]["MedicalB"]=prompt("set budget");
+    }
+    let rentB=0;
+    function setrentBudget(){
+        window.Budget[0]["RentB"]=prompt("set budget");
+    }
+    let stationaryB=0;
+    function setstationaryBudget(){
+        window.Budget[0]["StationaryB"]=prompt("set budget");
+    }
+    let petrolB=0;
+    function setpetrolBudget(){
+        window.Budget[0]["PetrolB"]=prompt("set budget");
+    }
+    let miscellaneousB=0;
+    function setmiscellaneousBudget(){
+        window.Budget[0]["MiscellaneousB"]=prompt("set budget");
+    }
+    function Budgetset(){
+    
+    localStorage.setItem('Budget',JSON.stringify(Budget));
+    }
+    
+    </script>
+
+    
+</body>
+</html>
