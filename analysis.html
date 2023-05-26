@@ -8,8 +8,10 @@
     </head>
 <body>
 
-    <h1>Money Manager</h1>
-    <header class="header" id="header">
+    <div class="grid" id="gridtr">
+        <h1 id="main-title">Money Manager</h1>  
+    </div>
+    <!-- <header class="header" id="header"> -->
         <nav class="navbar" id="navbar">
             <a href="index.html">Records</a>
             <a href="analysis.html">Analysis</a>
@@ -30,48 +32,43 @@ google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
 function drawChart() {
-    var groceryE=0;
-    var rentE=0;
-    var medicalE=0;
-    var stationaryE=0;
-    var miscellaneousE=0;
-    var petrolE=0;
+    var analysisE = [{"GroceryE":0,"RentE":0,"MedicalE":0,"StationaryE":0,"MiscellaneousE":0,"PetrolE":0}]
     itemstr=localStorage.getItem("itemsJson")
     itemJsonArray = JSON.parse(itemstr)
     itemJsonArray.forEach((element,i) =>{
         if (element[1]=="Grocery"){
-            groceryE+=Number(element[2])
+            analysisE[0]["GroceryE"] +=Number(element[2])
         }
         if (element[1]=="Rent"){
-            rentE=rentE+Number(element[2])
+            analysisE[0]["RentE"]+=Number(element[2])
         }
         if (element[1]=="Stationary"){
-            stationaryE=stationaryE+Number(element[2])
+            analysisE[0]["StationaryE"]+=Number(element[2])
         }
         
         if (element[1]=="Petrol"){
-            petrolE=petrolE+Number(element[2])
+            analysisE[0]["PetrolE"]+=Number(element[2])
         }
         
         if (element[1]=="Miscelleneous"){
-            miscellaneousE=miscellaneousE+Number(element[2])
+            analysisE[0]["MiscellaneousE"]+=Number(element[2])
         }
         
         if (element[1]=="Medical"){
-            medicalE=medicalE+Number(element[2])
+            analysisE[0]["MedicalE"]+=Number(element[2])
         }
     })
 
   var data = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-  ['Grocery',groceryE ],
-  ['Medical', medicalE],
-  ['Rent', rentE],
-  ['Stationary', stationaryE],
-  ['Miscellaneous', miscellaneousE],
-  ['Petrol',petrolE]
+  ['Grocery',analysisE[0]["GroceryE"]],
+  ['Medical', analysisE[0]["MedicalE"]],
+  ['Rent', analysisE[0]["RentE"]],
+  ['Stationary', analysisE[0]["StationaryE"]],
+  ['Miscellaneous', analysisE[0]["MiscellaneousE"]],
+  ['Petrol',analysisE[0]["PetrolE"]]
 ]);
-
+    localStorage.setItem('Analysis',JSON.stringify(analysisE))
   // Optional; add a title and set the width and height of the chart
   var options = {'title':"Your Spending's Distribution", is3D: true,};
 
