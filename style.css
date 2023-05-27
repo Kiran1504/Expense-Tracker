@@ -265,8 +265,8 @@ th , td{
 
 #recordtable{
     display: block;
-    width: 500px;
-    height: 500px;
+    width: 90%;
+    max-height: 490px;
     background-color: #F5F0BB;
     padding: 15px;
     overflow-y: auto;
@@ -322,7 +322,7 @@ th , td{
 }
 
 .cat{
-    font-size: xx-large;
+    font-size: x-large;
     font-family: sans-serif;
     font: bolder;
     color: #000;
