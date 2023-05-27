@@ -4,6 +4,14 @@ var accBalance = 0;
 function drop(){
     document.getElementById('dropcontent').classList.toggle("show")
 }
+function createtr(){
+    for(i=0;i<1100;i++){
+    var pixel=document.createElement('div')
+    pixel.classList.add('grid_item')
+    document.getElementById('gridtr').appendChild(pixel)    
+    }
+}
+createtr();
 function checkin_or_out(){
     if (document.getElementById("amount").value && document.getElementById('dropdown').innerText !== "Categories"){
         if (document.getElementById('expense-toggle').classList.contains('highlighted')){
@@ -198,14 +206,7 @@ function deleting(i){
 
 }
 save();
-function createtr(){
-    for(i=0;i<1100;i++){
-    var pixel=document.createElement('div')
-    pixel.classList.add('grid_item')
-    document.getElementById('gridtr').appendChild(pixel)    
-    }
-}
-createtr();
+
 
 function CheckLimit(){
     analysisE=JSON.parse(localStorage.getItem("Analysis"));
