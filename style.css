@@ -257,3 +257,81 @@ th , td{
     margin-left: 15px;
     align-self: center;
   }
+
+
+  /* THE RECORDS TABLE BEGINS HERE */
+
+
+
+#recordtable{
+    display: block;
+    width: 500px;
+    height: 500px;
+    background-color: #F5F0BB;
+    padding: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 20px;
+    
+}
+
+#listr{
+    list-style-type: none;
+    margin: 0cap;
+    padding: 0px;
+}
+
+.showred{
+    font-size: xx-large;
+    font-family: sans-serif;
+    color: crimson;
+    margin-right: 5px;
+}
+.showgreen{
+    
+    font-size: xx-large;
+    font-family: sans-serif;
+    color: rgb(20, 220, 127);
+    margin-right: 5px;
+}
+.transred, .transgreen{
+    margin: 4px;
+    border-right: 7px solid crimson;
+    background-color: #FFE7A0;
+    padding: 7px;
+}
+    
+.transred{border-color: crimson;}
+.transgreen{border-color: rgb(20, 220, 127);}
+.transred:hover,.transgreen:hover{
+    scale: 1.05;
+    transition: scale 0.3s ease;
+    background-color: #FBFFDC;
+    
+
+}
+
+.up{
+    display: flex;
+    justify-content:space-between;
+   
+}
+.dow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cat{
+    font-size: xx-large;
+    font-family: sans-serif;
+    font: bolder;
+    color: #000;
+}
+
+.date{
+    font-size: large;
+    font-family: sans-serif;
+   
+    color: #000;
+    
+}
