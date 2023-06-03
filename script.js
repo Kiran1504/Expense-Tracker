@@ -114,7 +114,7 @@ function save(use=true){
         let inORout="showred"
         let trans="transred"
         if (itemJsonArray[ferrari][1]=='Income Credited'){inORout="showgreen";trans="transgreen"}
-        console.log(itemJsonArray[ferrari],inORout)
+        
         
         
         // str += '<tr><td class="'+inORout+'">'+itemJsonArray[ferrari][0]+' </td><td class="'+inORout+'">'+  itemJsonArray[ferrari][1] + ' </td><td class="'+inORout+'">' + itemJsonArray[ferrari][2] + ' </td><td><button class="delete-button" onclick="deleting('+ferrari+')">Delete</button></td></tr>';
@@ -171,16 +171,16 @@ function updateFinalBalance(itemJsonArray,finalbalance,use){
                     finalbalance=accbalance-expense+income
                     }
                 })
-                console.log("IF is running");
-                console.log(itemJsonArray.length);
+                // console.log("IF is running");
+                // console.log(itemJsonArray.length);
         }
 
         else{
             let accbalance=document.getElementById("accbalance").innerText;
             
             finalbalance = accbalance
-            console.log(finalbalance);
-            console.log("ELSE is running");
+            // console.log(finalbalance);
+            // console.log("ELSE is running");
             document.getElementById("finalbalance").innerHTML="<h3>"+accbalance+"</h3>";
         }
     }
@@ -232,3 +232,25 @@ function CheckLimit(){
     }
     
 }
+
+
+
+
+
+//* A little table redesigning
+
+// function focustet(){
+//     this.style.scale="1.05"
+//     this.style.transition="scale 3s ease"
+// }
+
+// console.log('this')
+
+// let altet=document.getElementsByClassName('transred')
+// Object.values(altet).forEach(tet => {
+//     // this.addEventListener("mouseleave",focustet())
+//     // this.addEventListener("mouseleave",unfocustet())
+//     console.log(this)
+//     console.log('this')
+
+// });
