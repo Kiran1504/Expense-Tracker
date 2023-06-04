@@ -12,6 +12,7 @@ function createtr(){
     }
 }
 createtr();
+
 function checkin_or_out(){
     if (document.getElementById("amount").value && document.getElementById('dropdown').innerText !== "Categories"){
         if (document.getElementById('expense-toggle').classList.contains('highlighted')){
@@ -232,9 +233,6 @@ function CheckLimit(){
     }
     
 }
-
-
-
 
 
 //* A little table redesigning

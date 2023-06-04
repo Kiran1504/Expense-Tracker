@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -55,7 +56,7 @@
             <!-- <form action="/" method="post"> -->
                 <input type="text" id="cat" name="category" style="display: none;">
                 <input type="number" id="amount" name="amount">
-            <button type="submit" class="save" id="save" onclick="checkin_or_out()"> Save </button>
+            <button type="submit" class="confetti-button" id="save" onclick="checkin_or_out()"> Save </button>
         <!-- </form> -->
         </div>
     </div>
@@ -93,5 +94,24 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+    var animateButton = function(e) {
+
+        e.preventDefault;
+        //reset animation
+        e.target.classList.remove('animate');
+      
+        e.target.classList.add('animate');
+        setTimeout(function(){
+          e.target.classList.remove('animate');
+        },700);
+      };
+      
+      var classname = document.getElementsByClassName("confetti-button");
+      
+      for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', animateButton, false);
+      }
+      </script>
 </body>
 </html>
