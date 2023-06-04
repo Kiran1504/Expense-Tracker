@@ -38,8 +38,8 @@
         </div>
 
 
-        <div class="inputs" id="inputs">
-            <ul class="dropdown" id="dropdown" onclick="drop()"><h3 id="Drop-head">Categories</h3>
+        <div class="inputs" id="inputs" >
+            <ul class="dropdown" id="dropdown" onclick="drop()" ><h3 id="Drop-head">Categories</h3>
                 <div class="dropcontent" id="dropcontent">
                     <li class="options" onclick="changecategory(1)">Grocery</li>
                     <li class="options" onclick="changecategory(2)">Medical</li>
@@ -56,7 +56,7 @@
             <!-- <form action="/" method="post"> -->
                 <input type="text" id="cat" name="category" style="display: none;">
                 <input type="number" id="amount" name="amount">
-            <button type="submit" class="confetti-button" id="save" onclick="checkin_or_out()"> Save </button>
+            <button type="submit" class="save" id="save" onclick="checkin_or_out()"> Save </button>
         <!-- </form> -->
         </div>
     </div>
@@ -107,11 +107,29 @@
         },700);
       };
       
-      var classname = document.getElementsByClassName("confetti-button");
+      var classname = document.getElementsByClassName("save");
       
       for (var i = 0; i < classname.length; i++) {
         classname[i].addEventListener('click', animateButton, false);
       }
+
+      var animateButton = function(e) {
+
+        e.preventDefault;
+        //reset animation
+        e.target.classList.remove('animate');
+
+        e.target.classList.add('animate');
+        setTimeout(function(){
+        e.target.classList.remove('animate');
+        },700);
+        };
+
+        var classname = document.getElementsByClassName("clear");
+
+        for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', animateButton, false);
+        }
       </script>
 </body>
 </html>
